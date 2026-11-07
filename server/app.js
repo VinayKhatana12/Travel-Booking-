@@ -9,6 +9,7 @@ import authRoutes from './routes/authRoutes.js';
 import hotelRoutes from './routes/hotelRoutes.js';
 import flightRoutes from './routes/flightRoutes.js';
 import bookingRoutes from './routes/bookingRoutes.js';
+import contactRoutes from './routes/contactRoutes.js';
 
 export function createApp() {
   const app = express();
@@ -36,6 +37,7 @@ export function createApp() {
   app.use('/api/hotels', hotelRoutes);
   app.use('/api/flights', flightRoutes);
   app.use('/api/bookings', bookingRoutes);
+  app.use('/api/contact', contactRoutes);
 
   app.use(notFoundHandler);
   app.use(errorHandler);
