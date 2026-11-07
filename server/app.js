@@ -7,6 +7,7 @@ import { generalLimiter } from './middleware/rateLimiters.js';
 import { notFoundHandler, errorHandler } from './middleware/errorHandler.js';
 import authRoutes from './routes/authRoutes.js';
 import hotelRoutes from './routes/hotelRoutes.js';
+import flightRoutes from './routes/flightRoutes.js';
 
 export function createApp() {
   const app = express();
@@ -32,6 +33,7 @@ export function createApp() {
   // Feature routers
   app.use('/api/auth', authRoutes);
   app.use('/api/hotels', hotelRoutes);
+  app.use('/api/flights', flightRoutes);
 
   app.use(notFoundHandler);
   app.use(errorHandler);
