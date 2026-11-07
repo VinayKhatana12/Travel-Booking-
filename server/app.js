@@ -5,6 +5,7 @@ import cookieParser from 'cookie-parser';
 import { env } from './config.js';
 import { generalLimiter } from './middleware/rateLimiters.js';
 import { notFoundHandler, errorHandler } from './middleware/errorHandler.js';
+import authRoutes from './routes/authRoutes.js';
 
 export function createApp() {
   const app = express();
@@ -27,8 +28,8 @@ export function createApp() {
     res.json({ ok: true, service: 'wanderly-api', time: new Date().toISOString() });
   });
 
-  // Feature routers are mounted in later build steps (auth, hotels, flights,
-  // bookings, contact).
+  // Feature routers
+  app.use('/api/auth', authRoutes);
 
   app.use(notFoundHandler);
   app.use(errorHandler);
