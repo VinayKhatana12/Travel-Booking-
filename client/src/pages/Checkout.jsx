@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { cityName } from '../utils/cities';
-import { formatDate, formatDateShort, formatDuration, formatINR, formatTime, todayISO } from '../utils/format';
+import { formatDate, formatDateShort, formatDuration, formatINR, formatTime } from '../utils/format';
 import { hotelService } from '../services/hotelService';
 import { bookingService } from '../services/bookingService';
 import { ApiError } from '../services/api';
